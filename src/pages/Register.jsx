@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Mail, Lock, User, ShieldCheck, ArrowRight, Loader, Phone, MapPin, Briefcase, LayoutGrid } from 'lucide-react';
+import toast from 'react-hot-toast';
 import './Login.css';
 
 
@@ -71,12 +72,14 @@ const Register = () => {
             });
 
             if (result.success) {
-                alert('Registration successful! Please login.');
+                toast.success('Registration successful! Please login.');
                 navigate('/login');
             } else {
+                toast.error(result.error || 'Registration failed');
                 setError(result.error || 'Registration failed');
             }
         } catch (err) {
+            toast.error('Something went wrong. Please try again.');
             setError('Something went wrong. Please try again.');
         } finally {
             setLoading(false);

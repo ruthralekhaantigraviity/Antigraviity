@@ -1,0 +1,149 @@
+.navbar {
+    background-color: #ffffff;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: var(--spacing-sm) 0;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.logo-highlight {
+    color: var(--secondary-dark);
+}
+
+.navbar-search {
+    display: flex;
+    align-items: center;
+    background: var(--bg-color);
+    border-radius: 20px;
+    padding: 4px 12px;
+    width: 40%;
+    max-width: 400px;
+}
+
+.navbar-search input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    padding: 8px;
+    outline: none;
+}
+
+.search-btn {
+    background: transparent;
+    color: var(--text-secondary);
+}
+
+.navbar-links {
+    display: flex;
+    gap: var(--spacing-lg);
+    font-weight: 500;
+}
+
+.navbar-links a:hover {
+    color: var(--primary-color);
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.action-btn {
+    position: relative;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-btn {
+    gap: 8px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    transition: background 0.2s;
+}
+
+.user-btn:hover {
+    background: var(--bg-color);
+}
+
+.user-name-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: var(--spacing-md);
+        box-shadow: var(--shadow-md);
+        border-top: 1px solid #eee;
+    }
+
+    .mobile-search {
+        display: flex;
+        background: var(--bg-color);
+        padding: 8px;
+        border-radius: 8px;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .mobile-search input {
+        flex: 1;
+        border: none;
+        background: transparent;
+        outline: none;
+    }
+
+    .mobile-links li {
+        padding: var(--spacing-sm) 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+}

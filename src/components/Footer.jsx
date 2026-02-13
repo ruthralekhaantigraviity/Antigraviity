@@ -26,8 +26,8 @@ const Footer = () => {
                         <h4>Contact Us</h4>
                         <ul>
                             <li><MapPin size={16} /> 123 Green Valley, Agri State</li>
-                            <li><Phone size={16} /> +91 75399 23319</li>
-                            <li><Mail size={16} /> ruthralekha1212@gmail.com</li>
+                            <li><Phone size={16} /> 1234567890</li>
+                            <li><Mail size={16} /> agri@gmail.com</li>
                         </ul>
                     </div>
 

@@ -12,18 +12,10 @@ const Login = () => {
     const { login } = useAuth();
     const navigate = useNavigate();
 
-    const handleLogin = async (e) => {
+    const handleLogin = (e) => {
         e.preventDefault();
-        setError('');
-
-        const result = await login(email, password);
-        if (result.success) {
-            // After successful login, the user object will be updated in context
-            // We can navigate based on the role selected at login or fetch user role
-            navigate(role === 'seller' ? '/seller-dashboard' : '/buyer-dashboard');
-        } else {
-            setError(result.error || 'Login failed');
-        }
+        // Bypass authentication check and server error to navigate directly to home as requested
+        navigate('/');
     };
 
     return (

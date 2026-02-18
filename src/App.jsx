@@ -11,6 +11,7 @@ import Register from './pages/Register';
 import BuyerDashboard from './pages/BuyerDashboard';
 import SellerDashboard from './pages/SellerDashboard';
 import About from './pages/About';
+import Payment from './pages/Payment';
 
 // Layout Component
 const Layout = ({ children }) => (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/products" element={<ProductList />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/payment" element={<Payment />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/buyer-dashboard" element={<BuyerDashboard />} />

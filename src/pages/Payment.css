@@ -1,0 +1,245 @@
+/* Payment.css */
+.payment-page {
+    background-color: #f8f9fa;
+    min-height: 90vh;
+}
+
+.page-title {
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.payment-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.payment-options {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.payment-header {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.secure-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Payment Method Item */
+.payment-method {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #eee;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.payment-method:hover {
+    background-color: #f9f9f9;
+}
+
+.payment-method.active {
+    background-color: #f0fdf4;
+    /* Light green tint */
+    border-color: #4caf50;
+}
+
+.method-icon {
+    background: #eee;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 1rem;
+    transition: background 0.2s;
+}
+
+.payment-method.active .method-icon {
+    background: #4caf50;
+}
+
+.method-details h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 0.2rem;
+}
+
+.method-details p {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0;
+}
+
+.check-icon {
+    margin-left: auto;
+    color: #4caf50;
+}
+
+/* Active Method Details Area */
+.active-method-view {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed #ddd;
+}
+
+/* UPI Options */
+.upi-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.upi-app {
+    padding: 0.8rem 1.5rem;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.upi-app:hover {
+    border-color: #4caf50;
+    color: #4caf50;
+}
+
+.upi-id-input {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.upi-id-input input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+.upi-id-input button {
+    padding: 0 1.5rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Card Form */
+.card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+}
+
+.card-form input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+.card-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.card-row input {
+    flex: 1;
+}
+
+/* Right Side Summary */
+.payment-summary {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: fit-content;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.payment-summary h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.safety-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #f1f8e9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.safety-info p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #558b2f;
+}
+
+.pay-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #d32f2f;
+    /* Zomato/Food app red often used for action */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.pay-btn:hover {
+    background: #b71c1c;
+}
+
+.pay-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .payment-layout {
+        grid-template-columns: 1fr;
+    }
+}

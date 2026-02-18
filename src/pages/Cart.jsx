@@ -12,40 +12,9 @@ const Cart = () => {
     const [loading, setLoading] = useState(false);
     const [orderSuccess, setOrderSuccess] = useState(false);
 
-    const handleCheckout = async () => {
-        if (!isAuthenticated) {
-            navigate('/login');
-            return;
-        }
-
-        setLoading(true);
-        try {
-            const token = localStorage.getItem('ff_token');
-            const response = await fetch('http://localhost:5000/api/orders', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify({
-                    items: cartItems,
-                    total: subtotal + 40 // Subtotal + Delivery
-                })
-            });
-
-            if (response.ok) {
-                setOrderSuccess(true);
-                clearCart();
-                setTimeout(() => navigate('/buyer-dashboard'), 3000);
-            } else {
-                alert('Order failed. Please try again.');
-            }
-        } catch (err) {
-            console.error('Checkout error:', err);
-            alert('Server connection failed.');
-        } finally {
-            setLoading(false);
-        }
+    const handleCheckout = () => {
+        // Bypass login check as requested for demo flow
+        navigate('/payment');
     };
 
     if (orderSuccess) {

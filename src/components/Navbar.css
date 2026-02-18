@@ -30,11 +30,20 @@
 .navbar-search {
     display: flex;
     align-items: center;
-    background: var(--bg-color);
+    background: #f1f3f4;
+    /* Light grey background for contrast */
     border-radius: 20px;
     padding: 4px 12px;
-    width: 40%;
-    max-width: 400px;
+    width: 250px;
+    /* Fixed width to fit in actions area */
+    transition: all 0.3s ease;
+}
+
+.navbar-search:focus-within {
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    /* Expand on focus */
 }
 
 .navbar-search input {

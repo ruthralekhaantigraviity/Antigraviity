@@ -30,18 +30,6 @@ const Navbar = () => {
                     <span className="logo-text">Farmer<span className="logo-highlight">Friend</span></span>
                 </Link>
 
-                {/* Search Bar (Desktop) */}
-                <div className="navbar-search desktop-only">
-                    <input
-                        type="text"
-                        placeholder="Search for fresh produce..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        onKeyDown={handleSearch}
-                    />
-                    <button className="search-btn" onClick={handleSearch}><Search size={20} /></button>
-                </div>
-
                 {/* Desktop Links */}
                 <ul className="navbar-links desktop-only">
                     <li><Link to="/">Home</Link></li>
@@ -51,6 +39,18 @@ const Navbar = () => {
 
                 {/* Actions */}
                 <div className="navbar-actions">
+                    {/* Search Bar (Moved here) */}
+                    <div className="navbar-search desktop-only">
+                        <input
+                            type="text"
+                            placeholder="Search..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onKeyDown={handleSearch}
+                        />
+                        <button className="search-btn" onClick={handleSearch}><Search size={20} /></button>
+                    </div>
+
                     <Link to="/cart" className="action-btn">
                         <ShoppingCart size={24} />
                         {totalItems > 0 && <span className="badge">{totalItems}</span>}

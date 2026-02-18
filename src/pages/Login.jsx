@@ -9,13 +9,32 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const { login } = useAuth();
+    const { login, setUser } = useAuth();
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
-        // Bypass authentication check and server error to navigate directly to home as requested
-        navigate('/');
+
+        // Mock Login for Demo (since backend might be offline)
+        const mockUser = {
+            id: Date.now(),
+            name: role === 'seller' ? 'Ramesh Farmer' : 'Anjali Buyer',
+            email: email || 'demo@farmerfriend.com',
+            role: role,
+            coins: 50
+        };
+
+        setUser(mockUser);
+        localStorage.setItem('ff_user', JSON.stringify(mockUser));
+        localStorage.setItem('ff_token', 'mock-token-12345');
+
+        if (role === 'seller') {
+            // Redirect Farmer to Seller Dashboard (Products Uploaded Page)
+            navigate('/seller-dashboard');
+        } else {
+            // Redirect Buyer to Home Page
+            navigate('/');
+        }
     };
 
     return (

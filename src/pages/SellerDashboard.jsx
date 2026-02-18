@@ -58,6 +58,17 @@ const SellerDashboard = () => {
         }
     };
 
+    const handleImageUpload = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setNewProduct({ ...newProduct, image: reader.result });
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
     if (!user || user.role !== 'seller') {
         return <div className="container section">Please login as a Farmer to view this page.</div>;
     }
@@ -148,7 +159,20 @@ const SellerDashboard = () => {
                                     <option>Sugarcane</option>
                                 </select>
                             </div>
-                            <div className="form-group"><label>Image URL</label><input type="text" placeholder="https://..." value={newProduct.image} onChange={e => setNewProduct({ ...newProduct, image: e.target.value })} /></div>
+                            <div className="form-group">
+                                <label>Product Photo</label>
+                                <input
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={handleImageUpload}
+                                    style={{ padding: '0.5rem' }}
+                                />
+                                {newProduct.image && (
+                                    <div style={{ marginTop: '0.5rem' }}>
+                                        <img src={newProduct.image} alt="Preview" style={{ height: '60px', borderRadius: '4px', border: '1px solid #ddd' }} />
+                                    </div>
+                                )}
+                            </div>
                             <button className="btn-primary" type="submit">List Product</button>
                         </form>
                     </div>

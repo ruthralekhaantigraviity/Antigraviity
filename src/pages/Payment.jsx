@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { CheckCircle, CreditCard, Banknote, Smartphone, ChevronRight, Lock, ShieldCheck } from 'lucide-react';
+import toast from 'react-hot-toast';
 import './Payment.css';
 
 const Payment = () => {
@@ -19,8 +20,8 @@ const Payment = () => {
         setTimeout(() => {
             setProcessing(false);
             clearCart();
-            alert('Payment Successful! Order Placed.');
-            navigate('/buyer-dashboard');
+            toast.success('Payment Successful! Order Placed.');
+            navigate('/');
         }, 2000);
     };
 
